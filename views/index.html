@@ -32,10 +32,10 @@
     <input type="text" class="form-control" placeholder="New album name" ng-model="albumsIndexCtrl.newAlbum.name">
     <input type="text" class="form-control" placeholder="New album artist" ng-model="albumsIndexCtrl.newAlbum.artistName">
     <p><b>albumsIndexCtrl.newAlbum:</b> {{albumsIndexCtrl.newAlbum}}</p>
-    
+
     <input type="text" class="form-control" placeholder="Search name" ng-model="searchText">
-    <div ng-repeat="album in albumsIndexCtrl.albums | orderBy: 'name' | filter: searchText" class="row">{{album}}
-    
+    <div ng-repeat="album in albumsIndexCtrl.albums | orderBy: 'name' | filter: searchText" class="row">
+
     <div class="col-md-10 col-md-offset-1">
           <div class="panel panel-default">
             <div class="panel-body">
@@ -67,6 +67,6 @@
     </div>
 
 </body>
-  
+
 
 </html>
