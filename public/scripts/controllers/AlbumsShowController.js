@@ -19,13 +19,13 @@ function AlbumsShowController ($http, $routeParams) {
 
   // delete song function
   vm.deleteSong = function (song) {
-    
+
     $http({
       method: 'DELETE',
-      url: '/api/albums/'+ album._id + '/songs/' + song._id
+      url: '/api/albums/'+ $routeParams.id + '/songs/' + song._id
     }).then(function successCallback(json) {
-      var index = vm.albums.indexOf(album);
-      vm.albums.splice(index,1)
+      var index = vm.album.songs.indexOf(song);
+      vm.album.songs.splice(index,1)
     }, function errorCallback(response) {
       console.log('There was an error deleting the data', response);
     });
