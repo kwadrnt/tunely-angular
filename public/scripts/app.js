@@ -17,6 +17,7 @@ function config ($routeProvider, $locationProvider) {
       controllerAs: 'albumsIndexCtrl',
       controller: 'AlbumsIndexController'
     })
+    // showing one album on html page
     .when('/albums/:id', {
       templateUrl: '/templates/albums-show',
       controllerAs: 'albumsShowCtrl',

@@ -7,7 +7,7 @@ AlbumsShowController.$inject = ['$http', '$routeParams'];
 function AlbumsShowController ($http, $routeParams) {
   var vm = this;
   vm.newSong = {};
-
+  console.log('route params', $routeParams);
   $http({
     method: 'GET',
     url: '/api/albums/'+$routeParams.id
@@ -19,10 +19,10 @@ function AlbumsShowController ($http, $routeParams) {
 
   // delete song function
   vm.deleteSong = function (song) {
-
+    
     $http({
       method: 'DELETE',
-      url: '/api/albums/'+ album._id
+      url: '/api/albums/'+ album._id + '/songs/' + song._id
     }).then(function successCallback(json) {
       var index = vm.albums.indexOf(album);
       vm.albums.splice(index,1)
