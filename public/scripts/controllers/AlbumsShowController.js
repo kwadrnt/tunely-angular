@@ -17,4 +17,18 @@ function AlbumsShowController ($http, $routeParams) {
     console.log('There was an error getting the data', response);
   });
 
+  // delete song function
+  vm.deleteSong = function (song) {
+
+    $http({
+      method: 'DELETE',
+      url: '/api/albums/'+ album._id
+    }).then(function successCallback(json) {
+      var index = vm.albums.indexOf(album);
+      vm.albums.splice(index,1)
+    }, function errorCallback(response) {
+      console.log('There was an error deleting the data', response);
+    });
+  }
+
 }
